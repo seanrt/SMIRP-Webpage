@@ -1,0 +1,11 @@
+body {
+    background-color: #EFEFEF;	
+}
+#middle {
+    color: rgb(51, 51, 51);
+    min-height: 100%;
+}
+
+#sides { 
+	min-height: 100%;
+}
