@@ -5,6 +5,10 @@
 {% bootstrap_javascript %}
 <link rel="stylesheet" type="text/css" href="{% static 'SMIRP/mycss.css' %}" />
 
+<head>
+	<title>SMIRP</title>
+</head>
+
 <body>
 
 	<div class='row'>
@@ -15,7 +19,7 @@
 			<br><br>
 			Make a new prediction</h1>
 
-			<form action="/SMIRP/" method="post">
+			<form action="" method="post">
 			    {% csrf_token %}
 			    {{ form.as_p }}
 			    <input type="submit" value="Make a prediction" />
@@ -34,7 +38,7 @@
 
 			<h1>SMIRP source code</h1>
 
-				<p>SMIRP source code is available at https://github.com/jrgreen7/SMIRP/. SMIRP is written in Python, and can be run in Unix environments without installation.</p>
+				<p>SMIRP source code is available at <a href="https://github.com/jrgreen7/SMIRP/">https://github.com/jrgreen7/SMIRP/</a>. SMIRP is written in Python, and can be run in Unix environments without installation.</p>
 
 			<h1>Using the webserver</h1>
 
