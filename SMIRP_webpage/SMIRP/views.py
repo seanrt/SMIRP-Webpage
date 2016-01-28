@@ -13,6 +13,16 @@ def index(request):
             model = form.cleaned_data['model']
             sequence = form.cleaned_data['sequence']
 
+            sequence = sequence.upper()
+            sequence.replace('T','U')
+
+            if (len(sequence)>0):
+                f = open('SMIRP/scripts/fastas/'+sequence+'.fasta','w')
+                f.write('>tmp\n') 
+                f.write(sequence+'\n') 
+                f.close()
+
+
             return render(request, 'SMIRP/index.html', {
                 'form': form
             })
