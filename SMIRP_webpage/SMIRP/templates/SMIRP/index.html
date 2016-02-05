@@ -1,3 +1,12 @@
+<!-- Add a navbar
+Add question mark hovers
+Show the model graphs
+Add developer tasks with examples
+Support for multiple inputs up to a limit
+File upload 
+Centralise and highlight the citation link with the website and google scholar
+ -->
+
 {% load staticfiles %}
 {% load bootstrap3 %}
 
@@ -11,40 +20,43 @@
 
 <body>
 
+	<div class="jumbotron">
+		<div class='container' id='header'>SMIRP: The Sequence-specific miRNA Prediction tool</div>
+	</div>
+
 	<div class='row'>
 		<div class="col-md-1" id='sides'></div>
 
 		<div class="col-md-10" id='middle'>
-			<h1>SMIRP: The Sequence-specific miRNA Prediction tool
-			<br><br>
-			Make a new prediction</h1>
+			<!-- <p><b>Make a new prediction</b></p> -->
 
 			<form action="" method="post">
 			    {% csrf_token %}
 			    {{ form.as_p }}
-			    <input type="submit" value="Make a prediction" />
+			    <input class='btn btn-primary black-btn' type="submit" value="Make a prediction" />
 			</form>
 
-			<br><br>
-			<h1>Using SMIRP</h1>
+			<br>
+
+			<h3>Using SMIRP</h3>
 				<p>To make a prediction using SMIRP, enter an RNA sequence into the Sequence field, choose the model which best matches the species you are working with, and hit "Make a prediction". DNA sequences entered into the Sequence field will be converted into RNA sequences by replacing all T characters with U. Due to the computational requirements of generating feature data, the webserver only allows one prediction at a time using pre-computed models. If you wish to predict large datasets, the SMIRP source code is freely available (see below).</p>
 
-			<h1>About SMIRP</h1>
+			<h3>About SMIRP</h3>
 				<p>SMIRP is a framework for creating species-specific miRNA prediction systems, leveraging sequence conservation and phylogenetic distance information. Significant improvements in specificity and precision are obtained for non-human hold-out test species when our framework is applied to existing prediction systems. The framework is applicable to all forms of miRNA prediction systems and we expect it to achieve significant improvement in precision and specificity while sustaining sensitivity, independent of the machine learning technique chosen.</p>
 
-			<h1>About the webserver</h1>
+			<h3>About the webserver</h3>
 
 				<p>The SMIRP web server provides single-miRNA prediction using pre-generated species-specific miRNA prediction models. Prediction is performed using the feature set presented in the HeteroMirPred study [1], and using the LibSVM support vector machine implementation [2]. Currently, six prediction models are available for use on the webserver, representing six distinct species. If you wish to build models specific to a species, you may do so using the SMIRP source code, or request a species-specific model by emailing rpeace@sce.carleton.ca.</p>
 
-			<h1>SMIRP source code</h1>
+			<h3>SMIRP source code</h3>
 
 				<p>SMIRP source code is available at <a href="https://github.com/jrgreen7/SMIRP/">https://github.com/jrgreen7/SMIRP/</a>. SMIRP is written in Python, and can be run in Unix environments without installation.</p>
 
-			<h1>Using the webserver</h1>
+			<h3>Using the webserver</h3>
 
 				<p>In order to predict the validity of a potential miRNA sequence, enter the sequence into the above "Sequence" field, select the model species which most closely resembles your target species using the "Model" dropdown menu, and then click the "Make a Prediction" button. Please allow several seconds for the webserver to generate a prediction score for the sequence.</p>
 
-			<h1>Download sample data sets</h1>
+			<h3>Download sample data sets</h3>
 
 				<p>If you would like to try out SMIRP data sets, they are available below for select species.<br><br>
 
@@ -66,7 +78,7 @@
 
 				Anolis carolinensis: Positive Negative</p>
 
-			<h1>SMIRP publication</h1>
+			<h3>SMIRP publication</h3>
 
 				<p>Robert J. Peace, Kyle K. Biggar, Kenneth B. Storey, James R. Green. A framework for improving microRNA prediction in non-human genomes. Submitted to Nucleic Acids Research.</p>
 				<br>
